@@ -40,12 +40,21 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.universal": {
+<<<<<<< HEAD
       "version": "7.3.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.render-pipelines.core": "7.3.1",
         "com.unity.shadergraph": "7.3.1"
+=======
+      "version": "7.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.2.1",
+        "com.unity.shadergraph": "7.2.1"
+>>>>>>> 62e2db690783c457cc4f446a18440f0fa9f03ef3
       },
       "url": "https://packages.unity.com"
     },
@@ -101,11 +110,19 @@
       }
     },
     "com.unity.visualeffectgraph": {
+<<<<<<< HEAD
       "version": "7.3.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.shadergraph": "7.3.1"
+=======
+      "version": "7.1.8",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.shadergraph": "7.1.8"
+>>>>>>> 62e2db690783c457cc4f446a18440f0fa9f03ef3
       },
       "url": "https://packages.unity.com"
     },
@@ -130,7 +147,11 @@
     },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.4",
+<<<<<<< HEAD
       "depth": 0,
+=======
+      "depth": 1,
+>>>>>>> 62e2db690783c457cc4f446a18440f0fa9f03ef3
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
