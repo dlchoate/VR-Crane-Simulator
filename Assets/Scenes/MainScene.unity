@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &54226614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3572110687831528504, guid: b0926e0a5dd243640a444d76f2e18b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8210404548436660926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &386590981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8210404549790543880, guid: b0926e0a5dd243640a444d76f2e18b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8210404548436660926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405028272
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +430,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &689870882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8210404548749815803, guid: b0926e0a5dd243640a444d76f2e18b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8210404548436660926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &790612902
 Mesh:
   m_ObjectHideFlags: 0
@@ -581,6 +599,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &889116523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3557332658418633582, guid: b0926e0a5dd243640a444d76f2e18b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8210404548436660926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &945628256
 Mesh:
   m_ObjectHideFlags: 0
@@ -1329,9 +1353,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b525a6b0347b52e419db30d548891606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 20
   rotateableCraneObject: {fileID: 4660970919041549606}
   rotateLever: {fileID: 1929118694}
+  boomLever: {fileID: 689870882}
+  raiseLever: {fileID: 386590981}
+  subBoom: {fileID: 54226614}
+  slewCrane: {fileID: 889116523}
 --- !u!4 &1956047369
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,6 +1724,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1987638503224418530, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084900250761478011, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -19.22
+      objectReference: {fileID: 0}
     - target: {fileID: 3557332659615499062, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_Name
@@ -1756,11 +1794,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4701426205340647054, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.818
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 595601068}
+    - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1956047368}
+    - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetAngleZeroBoomLever
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404548749815798, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8210404548749815799, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_UseGravity
@@ -1770,6 +1843,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404548749815801, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.5615113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404548749815801, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 2.342204
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549104478046, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_Name
+      value: Raise Lever Top
       objectReference: {fileID: 0}
     - target: {fileID: 8210404549197664596, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
@@ -1789,18 +1877,48 @@ PrefabInstance:
     - target: {fileID: 8210404549197664598, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 1.4714253
+      value: 1.5615113
       objectReference: {fileID: 0}
     - target: {fileID: 8210404549197664598, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 2.2925005
+      value: 2.1487036
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 595601068}
+    - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1956047368}
+    - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetAngleZeroRotateLever
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549197664599, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8210404549790543876, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_UseGravity
@@ -1811,10 +1929,70 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543878, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.5615113
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543878, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 2.5342035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 595601068}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1956047368}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetAngleZeroRaiseLever
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543879, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210404549790543880, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_Name
+      value: Raise Lever
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0926e0a5dd243640a444d76f2e18b36, type: 3}
