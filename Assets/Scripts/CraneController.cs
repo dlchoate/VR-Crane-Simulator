@@ -22,19 +22,16 @@ public class CraneController : MonoBehaviour
 
     public void RotateController()
     {
-        Debug.Log("ROTATE CONTROLLER FUNCTION CALLED");
-
-        if (rotateLever.transform.rotation.x < 0)
+        Debug.Log(rotateLever.transform.rotation.eulerAngles.z);
+        if (rotateLever.transform.rotation.eulerAngles.z < 0)
         {
             RotateLeft();
-            Debug.Log("ROTATE LEFT");
         }
-        //else if (rotateLever.transform.rotation.x >= 1F && rotateLever.transform.rotation.x <= 35F)
-        //{
-        //    RotateRight();
-        //}
+        else if (rotateLever.transform.rotation.eulerAngles.z > 0)
+        {
+            RotateRight();
+        }
     }
-
 
     // Rotates the Crane Right
     public void RotateRight()
@@ -46,5 +43,10 @@ public class CraneController : MonoBehaviour
     public void RotateLeft()
     {
         rotateableCraneObject.transform.Rotate(Vector3.down * speed * Time.deltaTime);
+    }
+
+    public void ResetAngleZero()
+    {
+        rotateLever.transform.rotation = Quaternion.Euler(0,90,0);
     }
 }
