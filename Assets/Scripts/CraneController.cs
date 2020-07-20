@@ -8,8 +8,10 @@ public class CraneController : MonoBehaviour
     public GameObject rotateableCraneObject;
     public GameObject rotateLever;
     public GameObject boomLever;
-    public GameObject raiseLever;
+    public GameObject angleLever;
+    public GameObject pulleyLever;
     public GameObject subBoom;
+    public GameObject hook;
     public GameObject slewCrane;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class CraneController : MonoBehaviour
         RotateController();
         ExtendController();
         AngleUpDownController();
+        PulleyUpDownController();
     }
 
     public void RotateController()
@@ -52,13 +55,25 @@ public class CraneController : MonoBehaviour
 
     public void AngleUpDownController()
     {
-        if (raiseLever.transform.rotation.eulerAngles.z <= 360 && raiseLever.transform.rotation.eulerAngles.z >= 270)
+        if (angleLever.transform.rotation.eulerAngles.z <= 360 && angleLever.transform.rotation.eulerAngles.z >= 270)
         {
             CraneAngleUp();
         }
-        else if (raiseLever.transform.rotation.eulerAngles.z >= 1 && raiseLever.transform.rotation.eulerAngles.z <= 45)
+        else if (angleLever.transform.rotation.eulerAngles.z >= 1 && angleLever.transform.rotation.eulerAngles.z <= 45)
         {
             CraneAngleDown();
+        }
+    }
+
+    public void PulleyUpDownController()
+    {
+        if (pulleyLever.transform.rotation.eulerAngles.z <= 360 && pulleyLever.transform.rotation.eulerAngles.z >= 270)
+        {
+            LowerPulley();
+        }
+        else if (pulleyLever.transform.rotation.eulerAngles.z >= 1 && pulleyLever.transform.rotation.eulerAngles.z <= 45)
+        {
+            RaisePulley();
         }
     }
 
@@ -72,6 +87,18 @@ public class CraneController : MonoBehaviour
     public void RetractSubBoom()
     {
         subBoom.transform.Translate(Vector3.right * Time.deltaTime);
+    }
+
+    // Lowers the pully
+    public void LowerPulley()
+    {
+        hook.transform.Translate(Vector3.down * Time.deltaTime);
+    }
+
+    // Raises the pully
+    public void RaisePulley()
+    {
+        hook.transform.Translate(Vector3.up * Time.deltaTime);
     }
 
     // Rotates the Crane Right
@@ -110,6 +137,11 @@ public class CraneController : MonoBehaviour
 
     public void ResetAngleZeroRaiseLever()
     {
-        raiseLever.transform.rotation = Quaternion.Euler(0, 0, 0);
+        angleLever.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    public void ResetAngleZeroPulleyLever()
+    {
+        angleLever.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
