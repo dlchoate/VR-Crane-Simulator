@@ -20,6 +20,9 @@ public class CraneController : MonoBehaviour
     public bool angleConUp;
     public bool angleConDown;
 
+    public bool subBoomExt;
+    public bool subBoomRct;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,9 @@ public class CraneController : MonoBehaviour
 
         angleConUp = true;
         angleConDown = true;
+
+        subBoomExt = true;
+        subBoomRct = true;
     }
 
     // Update is called once per frame
@@ -37,6 +43,16 @@ public class CraneController : MonoBehaviour
         ExtendController();
         AngleUpDownController();
         PulleyUpDownController();
+    }
+
+    public void SetSubBoomExtend(bool n)
+    {
+        subBoomExt = n;
+    }
+
+    public void SetSubBoomRetract(bool n)
+    {
+        subBoomRct = n;
     }
 
     public void SetAngleControlDown(bool n)
@@ -73,11 +89,11 @@ public class CraneController : MonoBehaviour
 
     public void ExtendController()
     {
-        if (boomLever.transform.rotation.eulerAngles.z <= 360 && boomLever.transform.rotation.eulerAngles.z >= 270)
+        if (boomLever.transform.rotation.eulerAngles.z <= 360 && boomLever.transform.rotation.eulerAngles.z >= 270 && subBoomRct == true)
         {
             RetractSubBoom();
         }
-        else if (boomLever.transform.rotation.eulerAngles.z >= 1 && boomLever.transform.rotation.eulerAngles.z <= 45)
+        else if (boomLever.transform.rotation.eulerAngles.z >= 1 && boomLever.transform.rotation.eulerAngles.z <= 45 && subBoomExt == true)
         {
             ExtendSubBoom();
         }

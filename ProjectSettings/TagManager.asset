@@ -9,6 +9,7 @@ TagManager:
   - childblock
   - stop
   - boom
+  - subboom
   layers:
   - Default
   - TransparentFX
