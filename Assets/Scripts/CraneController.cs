@@ -14,12 +14,20 @@ public class CraneController : MonoBehaviour
     public GameObject hook;
     public GameObject slewCrane;
 
-    public bool rotateCol;
+    public bool rotateConRight;
+    public bool rotateConLeft;
+
+    public bool angleConUp;
+    public bool angleConDown;
 
     // Start is called before the first frame update
     void Start()
     {
-        rotateCol = true;
+        rotateConRight = true;
+        rotateConLeft = true;
+
+        angleConUp = true;
+        angleConDown = true;
     }
 
     // Update is called once per frame
@@ -31,22 +39,33 @@ public class CraneController : MonoBehaviour
         PulleyUpDownController();
     }
 
-    public void SetRotationControl(bool n)
+    public void SetAngleControlDown(bool n)
     {
-        Debug.Log("attempting to change bool value to false.");
+        angleConDown = n;
+    }
 
-        rotateCol = n;
+    public void SetAngleControlUp(bool n)
+    {
+        angleConUp = n;
+    }
 
-        Debug.Log(rotateCol);
+    public void SetRotationControlRight(bool n)
+    {
+        rotateConRight = n;
+    }
+
+    public void SetRotationControlLeft(bool n)
+    {
+        rotateConLeft = n;
     }
 
     public void RotateController()
     {
-        if (rotateLever.transform.rotation.eulerAngles.z <= 360 && rotateLever.transform.rotation.eulerAngles.z >= 270 && rotateCol == true)
+        if (rotateLever.transform.rotation.eulerAngles.z <= 360 && rotateLever.transform.rotation.eulerAngles.z >= 270 && rotateConLeft == true)
         {
             RotateLeft();
         }
-        else if (rotateLever.transform.rotation.eulerAngles.z >= 1 && rotateLever.transform.rotation.eulerAngles.z <= 45 && rotateCol == true)
+        else if (rotateLever.transform.rotation.eulerAngles.z >= 1 && rotateLever.transform.rotation.eulerAngles.z <= 45 && rotateConRight == true)
         {
             RotateRight();
         }
@@ -66,11 +85,11 @@ public class CraneController : MonoBehaviour
 
     public void AngleUpDownController()
     {
-        if (angleLever.transform.rotation.eulerAngles.z <= 360 && angleLever.transform.rotation.eulerAngles.z >= 270)
+        if (angleLever.transform.rotation.eulerAngles.z <= 360 && angleLever.transform.rotation.eulerAngles.z >= 270 && angleConUp == true)
         {
             CraneAngleUp();
         }
-        else if (angleLever.transform.rotation.eulerAngles.z >= 1 && angleLever.transform.rotation.eulerAngles.z <= 45)
+        else if (angleLever.transform.rotation.eulerAngles.z >= 1 && angleLever.transform.rotation.eulerAngles.z <= 45 && angleConDown == true)
         {
             CraneAngleDown();
         }

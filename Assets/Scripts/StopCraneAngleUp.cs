@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StopCraneRotation : MonoBehaviour
+public class StopCraneAngleUp : MonoBehaviour
 {
     public GameObject controlObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider col)
@@ -23,7 +23,7 @@ public class StopCraneRotation : MonoBehaviour
         if (col.CompareTag("boom"))
         {
             Debug.Log("OnTriggerEnter boom");
-            controlObject.GetComponent<CraneController>().SetRotationControl(false);
+            controlObject.GetComponent<CraneController>().SetAngleControlUp(false);
         }
     }
 
@@ -32,7 +32,7 @@ public class StopCraneRotation : MonoBehaviour
         if (col.CompareTag("boom"))
         {
             Debug.Log("OnTriggerExit boom");
-            controlObject.GetComponent<CraneController>().SetRotationControl(true);
+            controlObject.GetComponent<CraneController>().SetAngleControlUp(true);
         }
     }
 }
