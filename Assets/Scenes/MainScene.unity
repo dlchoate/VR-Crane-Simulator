@@ -509,7 +509,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1256
+  m_Name: pb_Mesh17818
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -678,7 +678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1272
+  m_Name: pb_Mesh17784
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1460,6 +1460,7 @@ MonoBehaviour:
   subBoom: {fileID: 54226614}
   hook: {fileID: 1584382261}
   slewCrane: {fileID: 889116523}
+  rotateCol: 0
 --- !u!4 &1956047369
 Transform:
   m_ObjectHideFlags: 0
@@ -1474,6 +1475,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2027373354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3557332658932031890, guid: b0926e0a5dd243640a444d76f2e18b36,
+    type: 3}
+  m_PrefabInstance: {fileID: 8210404548436660926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2027373360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027373354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280142c8b3fea2b489dbaeaad96f22f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlObject: {fileID: 1956047367}
 --- !u!1 &2101773492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,6 +1878,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -19.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557332658783663154, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557332658783663164, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_TagString
+      value: boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557332658932031890, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_TagString
+      value: stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557332658932031891, guid: b0926e0a5dd243640a444d76f2e18b36,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3557332659615499062, guid: b0926e0a5dd243640a444d76f2e18b36,
         type: 3}

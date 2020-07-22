@@ -14,10 +14,12 @@ public class CraneController : MonoBehaviour
     public GameObject hook;
     public GameObject slewCrane;
 
+    public bool rotateCol;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rotateCol = true;
     }
 
     // Update is called once per frame
@@ -29,13 +31,22 @@ public class CraneController : MonoBehaviour
         PulleyUpDownController();
     }
 
+    public void SetRotationControl(bool n)
+    {
+        Debug.Log("attempting to change bool value to false.");
+
+        rotateCol = n;
+
+        Debug.Log(rotateCol);
+    }
+
     public void RotateController()
     {
-        if (rotateLever.transform.rotation.eulerAngles.z <= 360 && rotateLever.transform.rotation.eulerAngles.z >= 270)
+        if (rotateLever.transform.rotation.eulerAngles.z <= 360 && rotateLever.transform.rotation.eulerAngles.z >= 270 && rotateCol == true)
         {
             RotateLeft();
         }
-        else if (rotateLever.transform.rotation.eulerAngles.z >= 1 && rotateLever.transform.rotation.eulerAngles.z <= 45)
+        else if (rotateLever.transform.rotation.eulerAngles.z >= 1 && rotateLever.transform.rotation.eulerAngles.z <= 45 && rotateCol == true)
         {
             RotateRight();
         }
