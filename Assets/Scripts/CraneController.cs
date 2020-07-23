@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CraneController : MonoBehaviour
 {
-    public float speed = 50.0f;
+    public float speed = 10.0F;
     public GameObject rotateableCraneObject;
     public GameObject rotateLever;
     public GameObject boomLever;
@@ -13,6 +13,9 @@ public class CraneController : MonoBehaviour
     public GameObject subBoom;
     public GameObject hook;
     public GameObject slewCrane;
+
+    public GameObject pullyHead;
+    public GameObject lerpObject;
 
     public bool rotateConRight;
     public bool rotateConLeft;
@@ -138,13 +141,15 @@ public class CraneController : MonoBehaviour
     // Lowers the pully
     public void LowerPulley()
     {
-        hook.transform.Translate(Vector3.down * Time.deltaTime);
+        hook.transform.position = Vector3.MoveTowards(hook.transform.position, pullyHead.transform.position, .3f * Time.deltaTime);
+        //hook.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     // Raises the pully
     public void RaisePulley()
     {
-        hook.transform.Translate(Vector3.up * Time.deltaTime);
+        hook.transform.position = Vector3.MoveTowards(hook.transform.position, lerpObject.transform.position, .3f * Time.deltaTime);
+        //hook.transform.Translate(Vector3.back * speed * Time.deltaTime);
     }
 
     // Rotates the Crane Right
@@ -188,6 +193,6 @@ public class CraneController : MonoBehaviour
 
     public void ResetAngleZeroPulleyLever()
     {
-        angleLever.transform.rotation = Quaternion.Euler(0, 0, 0);
+        pulleyLever.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

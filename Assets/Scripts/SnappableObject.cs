@@ -8,6 +8,8 @@ public class SnappableObject : MonoBehaviour
     GameObject snapparent; // the gameobject this transform will be snapped to
     Vector3 offset; // the offset of this object's position from the parent
 
+    public Transform snapchild;
+
     void Update()
     {
         if (snapped == true)
@@ -26,4 +28,13 @@ public class SnappableObject : MonoBehaviour
             offset = transform.position - snapparent.transform.position; //store relation to parent
         }
     }
+
+    public void Unsnap()
+    {
+        snapped = false;
+        //snapchild.GetComponent<BoxCollider>().enabled = false;
+        //snapparent.transform.parent = null;
+        Debug.Log("Unsnap");
+    }
+
 }
