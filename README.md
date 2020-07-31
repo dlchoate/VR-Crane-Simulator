@@ -14,4 +14,4 @@ crane.
 In the headset use the controllers to grab the levers to manipulate the crane. Try to move
 the crates from the right side to the target platforms on the left side.
 
-
+Feel free to try the v0.1 alpha release.
